@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analyzer & Job Match</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Resume Analyzer & Job Match System</h1>
+
+        <p class="subtitle">
+            Analyze your resume and check how well it matches a job.
+        </p>
+
+        <div class="card">
+
+            <h2>Upload Your Resume</h2>
+
+            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx">
+
+            <button id="uploadBtn">Upload Resume</button>
+
+            <p id="fileName"></p>
+
+        </div>
+        
+        <div class="card">
+
+    <h2>Resume Information</h2>
+
+    <p><strong>Name:</strong> <span id="resumeName">Not detected</span></p>
+
+    <p><strong>Email:</strong> <span id="resumeEmail">Not detected</span></p>
+
+    <p><strong>Phone:</strong> <span id="resumePhone">Not detected</span></p>
+
+</div>
+        <div class="card">
+
+            <h2>Skills Detected in Your Resume</h2>
+
+            <div id="resumeSkills"></div>
+
+        </div>        
+
+        <div class="card">
+
+            <h2>Job Description</h2>
+
+            <textarea 
+                id="jobDescription" 
+                placeholder="Paste the job description here..."
+            ></textarea>
+
+            
+
+            <button id="analyzeBtn">Analyze Resume</button>
+                <button id="resetBtn">Reset</button>
+
+        </div>
+
+        <div class="card" id="resultSection">
+
+            <h2>Analysis Result</h2>
+
+        <div class="resume-score">
+
+    <h3>Resume Score</h3>
+
+    <p id="resumeScore">0/100</p>
+    <button id="downloadBtn">Download Analysis Report</button>
+
+</div>
+
+    <p>
+    Match Percentage:
+    <span id="matchPercentage">0%</span>
+    </p>
+
+    <div class="stats">
+
+    <div class="stats">
+
+    <div class="stat-box">
+        <h3>Resume Skills</h3>
+        <p id="resumeSkillCount">0</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>Required Skills</h3>
+        <p id="requiredCount">0</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>Matched Skills</h3>
+        <p id="matchedCount">0</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>Missing Skills</h3>
+        <p id="missingCount">0</p>
+    </div>
+
+</div>
+
+    <div class="progress-container">
+        <div id="progressBar"></div>
+    </div>
+
+   <div class="score-info">
+
+    <strong>How is the score calculated?</strong>
+
+    <p>
+        Match Percentage =
+        (Matched Skills ÷ Required Skills) × 100
+    </p>
+
+    <p>
+        The system compares the technical skills
+        mentioned in the job description with the
+        skills detected in the uploaded resume.
+    </p>
+
+</div>
+
+    <p id="matchStatus">
+        Upload your resume and analyze a job description.
+    </p>
+
+            <h3>Matched Skills</h3>
+            <div id="matchedSkills"></div>
+
+            <h3>Missing Skills</h3>
+            <div id="missingSkills"></div>
+
+            <h3>Skills to Improve</h3>
+<p id="skillGap">
+    Analyze a job description to identify skills you should improve.
+</p>
+
+            <h3>Suggestions</h3>
+            <p id="suggestions">
+                Upload your resume and enter a job description to get suggestions.
+            </p>
+
+        </div>
+<h3>Recommended Job Roles</h3>
+
+<div id="jobRoles">
+    Analyze your resume to get recommended job roles.
+</div>
+    </div>
+    <section class="history-section">
+    <h2>Analysis History</h2>
+
+    <button id="historyBtn">View Recent Analyses</button>
+
+    <div id="historyContainer"></div>
+</section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
